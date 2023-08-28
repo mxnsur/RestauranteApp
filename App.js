@@ -1,20 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './telas/LoginScreen';
-import CardapioScreen from './telas/CardapioScreen';
+import Routes from './src/routes/Routes';
+import { StatusBar } from 'expo-status-bar';
 
-const Stack = createStackNavigator();
-
-const AppNavigator = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Cardapio" component={CardapioScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-export default AppNavigator;
+export default function App() {
+	return (
+		<NavigationContainer>
+			<StatusBar style='light' />
+			<Routes />
+		</NavigationContainer>
+	);
+}
